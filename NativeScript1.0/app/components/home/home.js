@@ -9,36 +9,36 @@ var isInit = true,
     viewModel = require('./home-view-model');
 
 function validateData(data) {
+    alert(123456789);
     
-    
-     $.ajax({
-        url: 'http://api.everlive.com/v1/8za5c9b7b0ktktsu/fCloud',
-        type: "GET",
-        headers: {
-            "X-Everlive-Debug": true
-        },
-        success: function (data) {
-            alert(JSON.stringify(data));
-        },
-        error: function (error) {
-            alert(JSON.stringify(error));
-        }
-    });
+     // $.ajax({
+     //    url: 'http://api.everlive.com/v1/8za5c9b7b0ktktsu/fCloud',
+     //    type: "GET",
+     //    headers: {
+     //        "X-Everlive-Debug": true
+     //    },
+     //    success: function (data) {
+     //        alert(JSON.stringify(data));
+     //    },
+     //    error: function (error) {
+     //        alert(JSON.stringify(error));
+     //    }
+     // });
 
 
 
-    var el = new Everlive('8za5c9b7b0ktktsu');
+     // var el = new Everlive('8za5c9b7b0ktktsu');
 
-    var data = el.data('fCloud');
-    data.withHeaders({
-            "X-Everlive-Debug": true
-        }).get(null)
-        .then(function (data) {
-                alert(JSON.stringify(data));
-            },
-            function (error) {
-                alert(JSON.stringify(error));
-            });
+     // var data = el.data('fCloud');
+     // data.withHeaders({
+     //        "X-Everlive-Debug": true
+     //    }).get(null)
+     //    .then(function (data) {
+     //            alert(JSON.stringify(data));
+     //        },
+     //        function (error) {
+     //            alert(JSON.stringify(error));
+     //        });
     
     
     
