@@ -1,0 +1,42 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded">
+    <Page.actionBar>
+        <widgets:action-bar />
+    </Page.actionBar>
+
+    <StackLayout>
+
+        <GridLayout rows="auto, *">
+
+            <Button text="Add" onTap="onAddItemTap" />
+
+            <ListView row="1" items="{{ listItems }}" itemTap="onListViewItemTap">
+                <ListView.itemTemplate>
+                    <StackLayout>
+                        <GridLayout columns="48, 100, *" cssClass="padded-label">
+
+                            <Label cssClass="km-icon" col="0" text="{{ icon }}" width="32" height="32" padding="8 6" />
+
+
+                            <Image col="1" width="100" height="100" src="{{ image }}" />
+
+
+                            <StackLayout col="2" cssClass="padded-label-stack">
+                                <Label text="{{ header }}" cssClass="title-label" textWrap="true" />
+                                <Label text="{{ description }}" textWrap="true" />
+                            </StackLayout>
+
+                        </GridLayout>
+                        <!-- additional view content -->
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+            <ActivityIndicator row="1" busy="{{ isLoading }}" />
+        </GridLayout>
+        <!-- additional view content -->
+
+        <!-- START_CUSTOM_CODE_masterDetailView -->
+        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+        <!-- END_CUSTOM_CODE_masterDetailView -->
+    </StackLayout>
+</Page>

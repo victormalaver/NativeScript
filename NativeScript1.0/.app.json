@@ -3,14 +3,146 @@
   "views": [
     {
       "type": "NativeScript:view",
-      "name": "homeView",
-      "components": [],
-      "title": "Home View",
+      "name": "masterDetailView",
+      "components": [
+        {
+          "type": "NativeScript:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [
+            {
+              "type": "NativeScript:editableListForm",
+              "components": [
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "nombre",
+                  "title": "Nombre",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Nombre"
+                },
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "descripcion",
+                  "title": "Descripcion",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Descripcion"
+                },
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "estadp",
+                  "title": "Estado",
+                  "inputType": "switch",
+                  "dataBinding": "Estado"
+                }
+              ],
+              "name": "editableListForm2",
+              "formType": "add"
+            },
+            {
+              "type": "NativeScript:editableListForm",
+              "components": [
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "nombre",
+                  "title": "Nombre",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Nombre"
+                },
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "descripcion",
+                  "title": "Descripcion",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Descripcion"
+                },
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "estado",
+                  "title": "Estado",
+                  "inputType": "switch",
+                  "dataBinding": "Estado"
+                }
+              ],
+              "name": "editableListForm3",
+              "formType": "edit"
+            }
+          ],
+          "name": "masterDetailViewModel",
+          "dataProvider": "nativeScript10",
+          "collection": "Producto",
+          "headerField": "Nombre",
+          "imageField": "Picture",
+          "subHeaderField": "Descripcion",
+          "iconField": true,
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "deleteItemButton": true,
+          "deleteItemConfirmation": true,
+          "detailHeaderFieldSource": "dataBound",
+          "detailHeaderField": "Nombre",
+          "detailSubHeaderField": "Nombre",
+          "detailDescriptionField": "Descripcion",
+          "detailImageField": "Picture",
+          "addItemForm": true,
+          "addScreenHeaderValue": "Nuevo",
+          "editItemForm": true,
+          "editScreenHeaderSource": "static",
+          "editScreenHeaderValue": "Edit"
+        }
+      ],
+      "title": "Productos",
+      "addToNavigation": true,
+      "icon": "bookmarks"
+    },
+    {
+      "type": "NativeScript:view",
+      "name": "home",
+      "components": [
+        {
+          "type": "NativeScript:authentication",
+          "name": "homeModel",
+          "dataProvider": "nativeScript10",
+          "emailLabel": "Correo",
+          "passwordLabel": "Contraseña",
+          "signinLabel": "Iniciar Sesión",
+          "signinRedirect": "masterDetailView",
+          "enableRegistration": true,
+          "gotoRegisterLabel": "Registrar",
+          "registerEmailLabel": "Correo",
+          "registerPasswordLabel": "Contraseña",
+          "registerNameLabel": "Usuario",
+          "registerLabel": "Registrarme",
+          "registerRedirect": "masterDetailView",
+          "gotoSigninLabel": "Regresar",
+          "enableLogout": true,
+          "logoutLabel": "Cerrar Sesión",
+          "enableRememberme": true,
+          "remembermeLabel": "Recordar"
+        }
+      ],
+      "title": "Iniciar Sesión",
       "addToNavigation": true,
       "icon": "home"
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "NativeScript:dataProvider",
+      "name": "nativeScript10",
+      "title": "NativeScript1.0 / NativeScript1.0",
+      "source": "everlive",
+      "everliveKey": "8za5c9b7b0ktktsu",
+      "offlineStorage": false
+    }
+  ],
   "name": "nativeScriptApp",
   "navigation": "listmenu",
   "transition": "none",

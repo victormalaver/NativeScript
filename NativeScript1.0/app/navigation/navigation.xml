@@ -10,5 +10,6 @@
                 <Label cssClass="list-title" col="1" text="{{ title }}" textWrap="true" />
             </GridLayout>
         </ListView.itemTemplate>
+        
     </ListView>
 </Page>

@@ -1,0 +1,29 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" navigatedTo="navigatedTo">
+    <Page.actionBar>
+        <widgets:action-bar />
+    </Page.actionBar>
+
+    <GridLayout rows="auto, *">
+        <GridLayout rows="auto" columns="*, *">
+
+            <widgets:button text="Edit" tap="onEditItemTap" />
+
+
+            <widgets:button col="1" text="Delete" tap="onDeleteItemTap" />
+
+        </GridLayout>
+        <StackLayout row="1">
+
+            <Image width="100" height="100" src="{{ Picture }}" />
+
+            <Label text="{{ Nombre }}" />
+
+            <Label text="{{ Nombre }}" />
+
+
+            <TextView text="{{ Descripcion }}" editable="false" />
+
+            <!-- additional view content -->
+        </StackLayout>
+    </GridLayout>
+</Page>
